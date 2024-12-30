@@ -60,12 +60,20 @@ header {
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    transition: background 0.3s, color 0.3s;
 }
 
 .titles button:hover {
     background: #005bb5;
     color: white;
 }
+
+.titles button.active {
+    background: #0073e6; /* Cor de fundo do botão ativo */
+    color: white; /* Cor do texto do botão ativo */
+    border-color: #005bb5; /* Cor da borda do botão ativo */
+}
+
 
 main {
     max-width: 1600px;
@@ -97,13 +105,14 @@ footer {
 <header>
     <img src="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/logo.png" alt="Skill Logo" class="logo">
     <div class="titles">
-        <button onclick="showContent('privacy')">
-            <span id="privacy-title">Privacy Policy</span>
-        </button>
-        <button onclick="showContent('terms')">
-            <span id="terms-title">Terms of Use</span>
-        </button>
-    </div>
+    <button onclick="showContent('privacy')" class="active"> <!-- "active" para o botão inicial -->
+        <span id="privacy-title">Privacy Policy</span>
+    </button>
+    <button onclick="showContent('terms')">
+        <span id="terms-title">Terms of Use</span>
+    </button>
+</div>
+
     <div class="language-selector">
         <img src="https://flagcdn.com/w320/br.png" alt="Português" onclick="showLanguage('pt')">
         <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="showLanguage('en')">
@@ -292,11 +301,19 @@ footer {
         document.getElementById('terms-title').textContent = titles[lang].terms;
     }
 
-    function showContent(contentType) {
-        currentContent = contentType;
-        document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
-        document.getElementById(`content-${contentType}`).classList.remove('hidden');
-    }
+   	function showContent(contentType) {
+    currentContent = contentType;
+
+    // Alternar o conteúdo exibido
+    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(`content-${contentType}`).classList.remove('hidden');
+
+    // Alterar o botão ativo
+    document.querySelectorAll('.titles button').forEach(button => button.classList.remove('active'));
+    document.querySelector(`.titles button[onclick="showContent('${contentType}')"]`).classList.add('active');
+}
+
+	
 </script>
 </body>
 </html>
