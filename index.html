@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Alexa Skill">
+    <title>Privacy Policy</title>
+	<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/1.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #5d5d5d;
+            line-height: 1.6;
+        }
+        header {
+            background: #ececec;
+            color: white;
+            padding: 1rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .language-selector {
+            display: flex;
+            gap: 10px;
+        }
+        .language-selector img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* Faz as bandeiras ficarem redondas */
+            cursor: pointer;
+        }
+        .logo {
+            height: 50px; /* Altura ajustada para o logo */
+            width: auto;
+        }
+        main {
+            
+            max-width: 1400px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #0073e6;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #ececec;
+            color: #5d5d5d;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo da skill -->
+        <img src="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/logo.png" alt="Skill Logo" class="logo">
+		<!-- Bandeiras -->
+        <div class="language-selector">
+            <img src="https://flagcdn.com/w320/br.png" alt="Português" onclick="showLanguage('pt')">
+            <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="showLanguage('en')">
+            <img src="https://flagcdn.com/w320/fr.png" alt="Français" onclick="showLanguage('fr')">
+        </div>
+    </header>
+
+    <main>
+        <!-- Conteúdo em Português -->
+        <div id="content-pt" class="hidden">
+            <h2>Introdução</h2>
+            <p>Esta Política de Privacidade explica como coletamos e usamos informações pessoais dos usuários ao interagirem com nossa Skill Alexa "<i>ComQroupa</i>".</p>
+
+            <h2>Informações que Coletamos</h2>
+            <ul>
+                <li>Localização do dispositivo (se a permissão for concedida).</li>
+                <li>Coletamos a localização fornecida pelo usuário como resposta à solicitação de localização (quando a permissão não é concedida).</li>
+            </ul>
+
+            <h2>Como Usamos as Informações</h2>
+            <p>As informações coletadas são usadas exclusivamente para fornecer respostas personalizadas e melhorar a funcionalidade da skill. Não compartilhamos, vendemos ou distribuímos informações pessoais a terceiros.</p>
+
+            <h2>Armazenamento de Dados</h2>
+            <p>Nenhum dado é armazenado. A localização é recuperada a cada interação com a skill apenas para fornecer os serviços da skill.</p>
+
+            <h2>Consentimento do Usuário</h2>
+            <p>Ao usar esta Skill Alexa, você consente com a coleta e uso da localização do dispositivo utilizado, conforme descrito nesta Política de Privacidade e na Política de Privacidade da Amazon. Se você não concorda, desative a skill no aplicativo Alexa.</p>
+
+            <h2>Atualizações</h2>
+            <p>Esta Política de Privacidade pode ser atualizada periodicamente. Verifique esta página para quaisquer alterações.</p>
+
+            <h2>Entre em Contato</h2>
+            <p>Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco em: j.rogge@outlook.com</p>
+        </div>
+
+       <!-- Content in English -->
+<div id="content-en" class="hidden">
+    <h2>Introduction</h2>
+    <p>This Privacy Policy explains how we collect and use personal information from users when they interact with our Alexa Skill "<i>SmartOutfit</i>".</p>
+
+    <h2>Information We Collect</h2>
+    <ul>
+        <li>Device location (if permission is granted).</li>
+        <li>We collect the location provided by the user in response to a location request (when permission is not granted).</li>
+    </ul>
+
+    <h2>How We Use the Information</h2>
+    <p>The information collected is used solely to provide personalized responses and improve the skill's functionality. We do not share, sell, or distribute personal information to third parties.</p>
+
+    <h2>Data Storage</h2>
+    <p>No data is stored. The location is retrieved during each interaction with the skill only to provide the skill's services.</p>
+
+    <h2>User Consent</h2>
+    <p>By using this Alexa Skill, you consent to the collection and use of the device location as described in this Privacy Policy and in Amazon's Privacy Policy. If you do not agree, please disable the skill in the Alexa app.</p>
+
+    <h2>Updates</h2>
+    <p>This Privacy Policy may be updated periodically. Please check this page for any changes.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:  j.rogge@outlook.com</p>
+</div>
+
+
+        <!-- Contenu en Français -->
+<div id="content-fr" class="hidden">
+    <h2>Introduction</h2>
+    <p>Cette Politique de Confidentialité explique comment nous collectons et utilisons les informations personnelles des utilisateurs lorsqu'ils interagissent avec notre Skill Alexa "<i>HabilleMoi</i>".</p>
+
+    <h2>Informations que Nous Collectons</h2>
+    <ul>
+        <li>Localisation de l'appareil (si la permission est accordée).</li>
+        <li>Nous collectons la localisation fournie par l'utilisateur en réponse à une demande de localisation (lorsque la permission n'est pas accordée).</li>
+    </ul>
+
+    <h2>Comment Nous Utilisons les Informations</h2>
+    <p>Les informations collectées sont utilisées uniquement pour fournir des réponses personnalisées et améliorer la fonctionnalité de la skill. Nous ne partageons, vendons ou distribuons aucune information personnelle à des tiers.</p>
+
+    <h2>Stockage des Données</h2>
+    <p>Aucune donnée n'est stockée. La localisation est récupérée lors de chaque interaction avec la skill uniquement pour fournir les services de la skill.</p>
+
+    <h2>Consentement de l'Utilisateur</h2>
+    <p>En utilisant cette Skill Alexa, vous consentez à la collecte et à l'utilisation de la localisation de l'appareil comme décrit dans cette Politique de Confidentialité et dans la Politique de Confidentialité d'Amazon. Si vous n'êtes pas d'accord, veuillez désactiver la skill dans l'application Alexa.</p>
+
+    <h2>Mises à Jour</h2>
+    <p>Cette Politique de Confidentialité peut être mise à jour périodiquement. Veuillez consulter cette page pour toute modification.</p>
+
+    <h2>Contactez-Nous</h2>
+    <p>Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité, veuillez nous contacter à : j.rogge@outlook.com</p>
+</div>
+
+    </main>
+
+    <footer id="footer">
+    &copy; 2024 Jacqueline Rogge. All Rights Reserved.
+</footer>
+
+<script>
+    function showLanguage(lang) {
+        // Conteúdo dinâmico para cada idioma
+        const content = {
+            pt: {
+                title: 'Política de Privacidade',
+                footer: '&copy; 2024 Jacqueline Rogge. Todos os direitos reservados.'
+            },
+            en: {
+                title: 'Privacy Policy',
+                footer: '&copy; 2024 Jacqueline Rogge. All Rights Reserved.'
+            },
+            fr: {
+                title: 'Politique de Confidentialité',
+                footer: '&copy; 2024 Jacqueline Rogge. Tous droits réservés.'
+            }
+        };
+
+        // Ocultar todo o conteúdo
+        document.querySelectorAll('[id^="content-"]').forEach(el => el.classList.add('hidden'));
+
+        // Exibir o conteúdo selecionado
+        document.getElementById(`content-${lang}`).classList.remove('hidden');
+
+        // Atualizar o título e o rodapé
+        document.title = content[lang].title;
+        document.getElementById('footer').innerHTML = content[lang].footer;
+    }
+</script>
+
+</body>
+</html>
