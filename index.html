@@ -5,103 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Privacy Policy for Alexa Skill">
     <title>Privacy Policy</title>
-	<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/1.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/1.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #5d5d5d;
-            line-height: 1.6;
-        }
-        header {
-            background: #ececec;
-            color: white;
-            padding: 1rem 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .language-selector {
-            display: flex;
-            gap: 10px;
-        }
-        .language-selector img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%; /* Faz as bandeiras ficarem redondas */
-            cursor: pointer;
-        }
-        .logo {
-            height: 50px; /* Altura ajustada para o logo */
-            width: auto;
-        }
-        main {
-            
-            max-width: 1400px;
-            margin: auto;
-        }
-        h1, h2 {
-            color: #0073e6;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #ececec;
-            color: #5d5d5d;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .hidden {
-            display: none;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #5d5d5d;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura total da janela */
+}
+
+header {
+    background: #ececec;
+    color: #5d5d5d;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed; /* Fixa o header na parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
+}
+
+.language-selector img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.titles {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.titles button {
+    background: white;
+    color: #0073e6;
+    border: 1px solid #0073e6;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.titles button:hover {
+    background: #005bb5;
+    color: white;
+}
+
+main {
+    max-width: 1600px;
+    margin: auto;
+    padding: 1rem;
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante entre o header e o footer */
+    padding-top: 70px; /* Espaço para o header fixo */
+    padding-bottom: 70px; /* Espaço para o footer fixo */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ececec;
+    color: #5d5d5d;
+    position: fixed; /* Fixa o footer na parte inferior */
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <!-- Logo da skill -->
-        <img src="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/logo.png" alt="Skill Logo" class="logo">
-		<!-- Bandeiras -->
-        <div class="language-selector">
-            <img src="https://flagcdn.com/w320/br.png" alt="Português" onclick="showLanguage('pt')">
-            <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="showLanguage('en')">
-            <img src="https://flagcdn.com/w320/fr.png" alt="Français" onclick="showLanguage('fr')">
-        </div>
-    </header>
-
-    <main>
-        <!-- Conteúdo em Português -->
-        <div id="content-pt" class="hidden">
+<header>
+    <img src="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/logo.png" alt="Skill Logo" class="logo">
+    <div class="titles">
+        <button onclick="showContent('privacy')">
+            <span id="privacy-title">Privacy Policy</span>
+        </button>
+        <button onclick="showContent('terms')">
+            <span id="terms-title">Terms of Use</span>
+        </button>
+    </div>
+    <div class="language-selector">
+        <img src="https://flagcdn.com/w320/br.png" alt="Português" onclick="showLanguage('pt')">
+        <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="showLanguage('en')">
+        <img src="https://flagcdn.com/w320/fr.png" alt="Français" onclick="showLanguage('fr')">
+    </div>
+</header>
+<main>
+    <!-- Conteúdo -->
+    <div id="content-privacy" class="content">
+        <div id="privacy-pt" class="hidden">
             <h2>Introdução</h2>
-            <p>Esta Política de Privacidade explica como coletamos e usamos informações pessoais dos usuários ao interagirem com nossa Skill Alexa "<i>ComQroupa</i>".</p>
+<p>Esta Política de Privacidade explica como coletamos e usamos as informações pessoais dos usuários ao interagirem com nossa Skill Alexa "<i>ComQroupa</i>".</p>
 
-            <h2>Informações que Coletamos</h2>
-            <ul>
-                <li>Localização do dispositivo (se a permissão for concedida).</li>
-                <li>Coletamos a localização fornecida pelo usuário como resposta à solicitação de localização (quando a permissão não é concedida).</li>
-            </ul>
+<h2>Informações que Coletamos</h2>
+<ul>
+    <li>Localização do dispositivo (se a permissão for concedida).</li>
+    <li>Coletamos a localização fornecida pelo usuário em resposta a uma solicitação de localização (quando a permissão não é concedida).</li>
+</ul>
 
-            <h2>Como Usamos as Informações</h2>
-            <p>As informações coletadas são usadas exclusivamente para fornecer respostas personalizadas e melhorar a funcionalidade da skill. Não compartilhamos, vendemos ou distribuímos informações pessoais a terceiros.</p>
+<h2>Como Usamos as Informações</h2>
+<p>As informações coletadas são usadas exclusivamente para fornecer respostas personalizadas e melhorar a funcionalidade da skill. Não compartilhamos, vendemos ou distribuímos informações pessoais a terceiros.</p>
 
-            <h2>Armazenamento de Dados</h2>
-            <p>Nenhum dado é armazenado. A localização é recuperada a cada interação com a skill apenas para fornecer os serviços da skill.</p>
+<h2>Armazenamento de Dados</h2>
+<p>Nenhum dado é armazenado. A localização é recuperada durante cada interação com a skill apenas para fornecer os serviços da skill.</p>
 
-            <h2>Consentimento do Usuário</h2>
-            <p>Ao usar esta Skill Alexa, você consente com a coleta e uso da localização do dispositivo utilizado, conforme descrito nesta Política de Privacidade e na Política de Privacidade da Amazon. Se você não concorda, desative a skill no aplicativo Alexa.</p>
+<h2>Consentimento do Usuário</h2>
+<p>Ao usar esta Skill Alexa, você consente com a coleta e o uso da localização do dispositivo conforme descrito nesta Política de Privacidade e na Política de Privacidade da Amazon. Se você não concorda, desative a skill no aplicativo Alexa.</p>
 
-            <h2>Atualizações</h2>
-            <p>Esta Política de Privacidade pode ser atualizada periodicamente. Verifique esta página para quaisquer alterações.</p>
+<h2>Atualizações</h2>
+<p>Esta Política de Privacidade pode ser atualizada periodicamente. Verifique esta página para quaisquer alterações.</p>
 
-            <h2>Entre em Contato</h2>
-            <p>Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco em: j.rogge@outlook.com</p>
+<h2>Entre em Contato</h2>
+<p>Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco em: j.rogge@outlook.com</p>
+
         </div>
-
-       <!-- Content in English -->
-<div id="content-en" class="hidden">
-    <h2>Introduction</h2>
+        <div id="privacy-en">
+<h2>Introduction</h2>
     <p>This Privacy Policy explains how we collect and use personal information from users when they interact with our Alexa Skill "<i>SmartOutfit</i>".</p>
 
     <h2>Information We Collect</h2>
@@ -124,12 +163,9 @@
 
     <h2>Contact Us</h2>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:  j.rogge@outlook.com</p>
-</div>
-
-
-        <!-- Contenu en Français -->
-<div id="content-fr" class="hidden">
-    <h2>Introduction</h2>
+        </div>
+        <div id="privacy-fr" class="hidden">
+             <h2>Introduction</h2>
     <p>Cette Politique de Confidentialité explique comment nous collectons et utilisons les informations personnelles des utilisateurs lorsqu'ils interagissent avec notre Skill Alexa "<i>HabilleMoi</i>".</p>
 
     <h2>Informations que Nous Collectons</h2>
@@ -152,43 +188,115 @@
 
     <h2>Contactez-Nous</h2>
     <p>Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité, veuillez nous contacter à : j.rogge@outlook.com</p>
-</div>
+        </div>
+    </div>
+    <div id="content-terms" class="content hidden">
+        <div id="terms-pt" class="hidden">
+            <h2>1. Aceitação dos Termos</h2>
+    <p>Ao ativar e utilizar a skill "<i>ComQroupa</i>" na Alexa, você concorda com os presentes Termos de Uso. Se não concordar com algum dos termos, desative a skill imediatamente.</p>
 
-    </main>
+    <h2>2. Descrição do Serviço</h2>
+    <p>A skill "<i>ComQroupa</i>" fornece informações sobre como se vestir com base nas condições climáticas atuais para a localidade do dispositivo ou localidade fornecida pelo usuário.</p>
 
-    <footer id="footer">
+    <h2>3. Uso da Skill</h2>
+    <ul>
+        <li><strong>Requisitos:</strong> Para utilizar a skill, é necessário possuir uma conta Amazon ativa, um dispositivo compatível com Alexa e acesso à internet.</li>
+        <li><strong>Comandos de Voz:</strong> Você pode interagir com a skill por meio de comandos de voz, como "<i>Alexa, com que roupa</i>".</li>
+    </ul>
+
+    <h2>4. Limitações de Responsabilidade</h2>
+    <p>As informações fornecidas pela skill são obtidas de fontes de terceiros e visam oferecer dados precisos e atualizados. No entanto, não garantimos a exatidão ou completude dessas informações e não nos responsabilizamos por quaisquer danos ou prejuízos decorrentes do uso da skill.</p>
+
+    <h2>5. Privacidade</h2>
+    <p>Ao utilizar a skill, a localização do dispositivo (cidade e estado) é coletada para fornecer previsões precisas. Para mais detalhes sobre como suas informações são utilizadas e protegidas, consulte nossa Política de Privacidade.</p>
+
+    <h2>6. Alterações nos Termos de Uso</h2>
+    <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Recomenda-se revisar periodicamente os termos para estar ciente de quaisquer alterações.</p>
+
+    <h2>7. Contato</h2>
+    <p>Em caso de dúvidas ou preocupações sobre estes Termos de Uso, entre em contato conosco pelo e-mail: j.rogge@outlook.com.</p>
+        </div>
+        <div id="terms-en">
+           <h2>1. Acceptance of Terms</h2>
+<p>By enabling and using the "<i>SmartOutfit</i>" skill on Alexa, you agree to these Terms of Use. If you do not agree with any of the terms, please disable the skill immediately.</p>
+
+<h2>2. Service Description</h2>
+<p>The "<i>SmartOutfit</i>" skill provides information on how to dress based on the current weather conditions for the device's location or the location provided by the user.</p>
+
+<h2>3. Use of the Skill</h2>
+<ul>
+    <li><strong>Requirements:</strong> To use the skill, you must have an active Amazon account, a device compatible with Alexa, and internet access.</li>
+    <li><strong>Voice Commands:</strong> You can interact with the skill using voice commands, such as "<i>Alexa, smart outfit</i>".</li>
+</ul>
+
+<h2>4. Limitation of Liability</h2>
+<p>The information provided by the skill is obtained from third-party sources and aims to offer accurate and up-to-date data. However, we do not guarantee the accuracy or completeness of this information and are not responsible for any damages or losses resulting from the use of the skill.</p>
+
+<h2>5. Privacy</h2>
+<p>By using the skill, your device's location (city and state) is collected to provide accurate forecasts. For more details on how your information is used and protected, please refer to our Privacy Policy.</p>
+
+<h2>6. Changes to the Terms of Use</h2>
+<p>We reserve the right to modify these Terms of Use at any time. It is recommended to review them periodically to stay informed of any changes.</p>
+
+<h2>7. Contact</h2>
+<p>If you have any questions or concerns about these Terms of Use, please contact us at: j.rogge@outlook.com.</p>
+
+        </div>
+        <div id="terms-fr" class="hidden">
+            <h2>1. Acceptation des Conditions</h2>
+<p>En activant et en utilisant la skill "<i>HabilleMoi</i>" sur Alexa, vous acceptez les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec l'une des conditions, désactivez immédiatement la skill.</p>
+
+<h2>2. Description du Service</h2>
+<p>La skill "<i>HabilleMoi</i>" fournit des informations sur la façon de s'habiller en fonction des conditions météorologiques actuelles pour la localisation de l'appareil ou celle fournie par l'utilisateur.</p>
+
+<h2>3. Utilisation de la Skill</h2>
+<ul>
+    <li><strong>Exigences :</strong> Pour utiliser la skill, vous devez posséder un compte Amazon actif, un appareil compatible avec Alexa et un accès à Internet.</li>
+    <li><strong>Commandes Vocales :</strong> Vous pouvez interagir avec la skill via des commandes vocales, telles que "<i>Alexa, habille moi</i>".</li>
+</ul>
+
+<h2>4. Limitations de Responsabilité</h2>
+<p>Les informations fournies par la skill proviennent de sources tierces et visent à offrir des données précises et à jour. Cependant, nous ne garantissons pas l'exactitude ou l'exhaustivité de ces informations et déclinons toute responsabilité quant aux dommages ou préjudices résultant de l'utilisation de la skill.</p>
+
+<h2>5. Confidentialité</h2>
+<p>En utilisant la skill, la localisation de votre appareil (ville et état) est collectée pour fournir des prévisions précises. Pour plus de détails sur la manière dont vos informations sont utilisées et protégées, consultez notre Politique de Confidentialité.</p>
+
+<h2>6. Modifications des Conditions d'Utilisation</h2>
+<p>Nous nous réservons le droit de modifier ces Conditions d'Utilisation à tout moment. Il est recommandé de les consulter périodiquement pour être informé de toute modification.</p>
+
+<h2>7. Contact</h2>
+<p>Pour toute question ou préoccupation concernant ces Conditions d'Utilisation, veuillez nous contacter à l'adresse e-mail suivante : j.rogge@outlook.com.</p>
+
+        </div>
+    </div>
+</main>
+<footer>
     &copy; 2024 Jacqueline Rogge. All Rights Reserved.
 </footer>
-
 <script>
+    let currentContent = 'privacy';
+
     function showLanguage(lang) {
-        // Conteúdo dinâmico para cada idioma
-        const content = {
-            pt: {
-                title: 'Política de Privacidade',
-                footer: '&copy; 2024 Jacqueline Rogge. Todos os direitos reservados.'
-            },
-            en: {
-                title: 'Privacy Policy',
-                footer: '&copy; 2024 Jacqueline Rogge. All Rights Reserved.'
-            },
-            fr: {
-                title: 'Politique de Confidentialité',
-                footer: '&copy; 2024 Jacqueline Rogge. Tous droits réservés.'
-            }
+        const sections = ['privacy', 'terms'];
+        sections.forEach(section => {
+            document.querySelectorAll(`#content-${section} > div`).forEach(el => el.classList.add('hidden'));
+            document.getElementById(`${section}-${lang}`).classList.remove('hidden');
+        });
+
+        const titles = {
+            pt: { privacy: 'Política de Privacidade', terms: 'Termos de Uso' },
+            en: { privacy: 'Privacy Policy', terms: 'Terms of Use' },
+            fr: { privacy: 'Politique de Confidentialité', terms: 'Conditions d\'Utilisation' }
         };
+        document.getElementById('privacy-title').textContent = titles[lang].privacy;
+        document.getElementById('terms-title').textContent = titles[lang].terms;
+    }
 
-        // Ocultar todo o conteúdo
-        document.querySelectorAll('[id^="content-"]').forEach(el => el.classList.add('hidden'));
-
-        // Exibir o conteúdo selecionado
-        document.getElementById(`content-${lang}`).classList.remove('hidden');
-
-        // Atualizar o título e o rodapé
-        document.title = content[lang].title;
-        document.getElementById('footer').innerHTML = content[lang].footer;
+    function showContent(contentType) {
+        currentContent = contentType;
+        document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(`content-${contentType}`).classList.remove('hidden');
     }
 </script>
-
 </body>
 </html>
