@@ -5,114 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Privacy Policy for Alexa Skill">
     <title>Privacy Policy</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/1.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/1.png" type="image/png">
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #5d5d5d;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura total da janela */
-}
+        /* Estilos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #5d5d5d;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-header {
-    background: #ececec;
-    color: #5d5d5d;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: fixed; /* Fixa o header na parte superior */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Garante que o header fique sobre outros elementos */
-}
+        header {
+            background: #ececec;
+            color: #5d5d5d;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.language-selector img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-right: 40px;
-}
+		.language-selector{
+			margin-right:30px;
+        }
 
-.logo {
-    height: 50px;
-    width: auto;
-}
+        .language-selector img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+			margin-left:10px;
+        }
 
-.titles {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
+        .logo {
+            height: 50px;
+        }
 
-.titles button {
-    background: white;
-    color: #0073e6;
-    border: 1px solid #0073e6;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s, color 0.3s;
-}
+        .titles {
+            display: flex;
+            gap: 10px;
+        }
 
-.titles button:hover {
-    background: #005bb5;
-    color: white;
-}
+        .titles button {
+            background: white;
+            color: #0073e6;
+            border: 1px solid #0073e6;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-.titles button.active {
-    background: #0073e6; /* Cor de fundo do botão ativo */
-    color: white; /* Cor do texto do botão ativo */
-    border-color: #005bb5; /* Cor da borda do botão ativo */
-}
+        .titles button.active {
+            background: #0073e6;
+            color: white;
+            border-color: #005bb5;
+        }
 
+        main {
+            flex: 1;
+            padding: 80px 20px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-main {
-    max-width: 1600px;
-    margin: auto;
-    padding: 1rem;
-    flex: 1; /* Faz o conteúdo ocupar o espaço restante entre o header e o footer */
-    padding-top: 70px; /* Espaço para o header fixo */
-    padding-bottom: 70px; /* Espaço para o footer fixo */
-}
+        footer {
+            background: #ececec;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #ececec;
-    color: #5d5d5d;
-    position: fixed; /* Fixa o footer na parte inferior */
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.hidden {
-    display: none;
-}
-
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 <header>
     <img src="https://raw.githubusercontent.com/JacquelineRogge/SmartOutfit/refs/heads/main/logo.png" alt="Skill Logo" class="logo">
     <div class="titles">
-    <button onclick="showContent('privacy')" class="active"> <!-- "active" para o botão inicial -->
-        <span id="privacy-title">Privacy Policy</span>
-    </button>
-    <button onclick="showContent('terms')">
-        <span id="terms-title">Terms of Use</span>
-    </button>
-</div>
-
+        <button onclick="showContent('privacy')" class="active"><span id="privacy-title">Privacy Policy</span></button>
+        <button onclick="showContent('terms')"><span id="terms-title">Terms of Use</span></button>
+    </div>
     <div class="language-selector">
         <img src="https://flagcdn.com/w320/br.png" alt="Português" onclick="showLanguage('pt')">
         <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="showLanguage('en')">
@@ -120,10 +104,10 @@ footer {
     </div>
 </header>
 <main>
-    <!-- Conteúdo -->
     <div id="content-privacy" class="content">
         <div id="privacy-pt" class="hidden">
-            <h2>Introdução</h2>
+            <!-- Conteúdo em Português -->
+			 <h2>Introdução</h2>
 <p>Esta Política de Privacidade explica como coletamos e usamos as informações pessoais dos usuários ao interagirem com nossa Skill Alexa "<i>ComQroupa</i>".</p>
 
 <h2>Informações que Coletamos</h2>
@@ -146,10 +130,10 @@ footer {
 
 <h2>Entre em Contato</h2>
 <p>Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco em: j.rogge@outlook.com</p>
-
         </div>
         <div id="privacy-en">
-<h2>Introduction</h2>
+            <!-- Conteúdo em Inglês -->
+			<h2>Introduction</h2>
     <p>This Privacy Policy explains how we collect and use personal information from users when they interact with our Alexa Skill "<i>SmartOutfit</i>".</p>
 
     <h2>Information We Collect</h2>
@@ -174,7 +158,8 @@ footer {
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:  j.rogge@outlook.com</p>
         </div>
         <div id="privacy-fr" class="hidden">
-             <h2>Introduction</h2>
+            <!-- Conteúdo em Francês -->
+			  <h2>Introduction</h2>
     <p>Cette Politique de Confidentialité explique comment nous collectons et utilisons les informations personnelles des utilisateurs lorsqu'ils interagissent avec notre Skill Alexa "<i>HabilleMoi</i>".</p>
 
     <h2>Informations que Nous Collectons</h2>
@@ -201,7 +186,8 @@ footer {
     </div>
     <div id="content-terms" class="content hidden">
         <div id="terms-pt" class="hidden">
-            <h2>1. Aceitação dos Termos</h2>
+            <!-- Conteúdo em Português -->
+			 <h2>1. Aceitação dos Termos</h2>
     <p>Ao ativar e utilizar a skill "<i>ComQroupa</i>" na Alexa, você concorda com os presentes Termos de Uso. Se não concordar com algum dos termos, desative a skill imediatamente.</p>
 
     <h2>2. Descrição do Serviço</h2>
@@ -226,7 +212,8 @@ footer {
     <p>Em caso de dúvidas ou preocupações sobre estes Termos de Uso, entre em contato conosco pelo e-mail: j.rogge@outlook.com.</p>
         </div>
         <div id="terms-en">
-           <h2>1. Acceptance of Terms</h2>
+            <!-- Conteúdo em Inglês -->
+			<h2>1. Acceptance of Terms</h2>
 <p>By enabling and using the "<i>SmartOutfit</i>" skill on Alexa, you agree to these Terms of Use. If you do not agree with any of the terms, please disable the skill immediately.</p>
 
 <h2>2. Service Description</h2>
@@ -249,10 +236,10 @@ footer {
 
 <h2>7. Contact</h2>
 <p>If you have any questions or concerns about these Terms of Use, please contact us at: j.rogge@outlook.com.</p>
-
         </div>
         <div id="terms-fr" class="hidden">
-            <h2>1. Acceptation des Conditions</h2>
+            <!-- Conteúdo em Francês -->
+			 <h2>1. Acceptation des Conditions</h2>
 <p>En activant et en utilisant la skill "<i>HabilleMoi</i>" sur Alexa, vous acceptez les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec l'une des conditions, désactivez immédiatement la skill.</p>
 
 <h2>2. Description du Service</h2>
@@ -275,17 +262,25 @@ footer {
 
 <h2>7. Contact</h2>
 <p>Pour toute question ou préoccupation concernant ces Conditions d'Utilisation, veuillez nous contacter à l'adresse e-mail suivante : j.rogge@outlook.com.</p>
-
         </div>
     </div>
 </main>
-<footer>
+<footer id="footer">
     &copy; 2024 Jacqueline Rogge. All Rights Reserved.
 </footer>
 <script>
     let currentContent = 'privacy';
 
     function showLanguage(lang) {
+        const content = {
+            pt: { title: 'Política de Privacidade', footer: '&copy; 2024 Jacqueline Rogge. Todos os direitos reservados.' },
+            en: { title: 'Privacy Policy', footer: '&copy; 2024 Jacqueline Rogge. All Rights Reserved.' },
+            fr: { title: 'Politique de Confidentialité', footer: '&copy; 2024 Jacqueline Rogge. Tous droits réservés.' }
+        };
+
+        document.title = content[lang].title;
+        document.getElementById('footer').innerHTML = content[lang].footer;
+
         const sections = ['privacy', 'terms'];
         sections.forEach(section => {
             document.querySelectorAll(`#content-${section} > div`).forEach(el => el.classList.add('hidden'));
@@ -301,19 +296,13 @@ footer {
         document.getElementById('terms-title').textContent = titles[lang].terms;
     }
 
-   	function showContent(contentType) {
-    currentContent = contentType;
-
-    // Alternar o conteúdo exibido
-    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
-    document.getElementById(`content-${contentType}`).classList.remove('hidden');
-
-    // Alterar o botão ativo
-    document.querySelectorAll('.titles button').forEach(button => button.classList.remove('active'));
-    document.querySelector(`.titles button[onclick="showContent('${contentType}')"]`).classList.add('active');
-}
-
-	
+    function showContent(contentType) {
+        currentContent = contentType;
+        document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(`content-${contentType}`).classList.remove('hidden');
+        document.querySelectorAll('.titles button').forEach(button => button.classList.remove('active'));
+        document.querySelector(`.titles button[onclick="showContent('${contentType}')"]`).classList.add('active');
+    }
 </script>
 </body>
 </html>
